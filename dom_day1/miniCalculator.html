@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        button{
+            border: 1px solid black; 
+            padding: 3px; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input id="fnum" type="number" placeholder="enter 1st number">
+    <input id="snum" type="number" placeholder="enter 2nd number">
+    <hr>
+    <button onClick="add()">Add</button>
+    <button onClick="sub()">Substract</button>
+    <button onClick="multi()">Multiply</button>
+    <button onClick="div()">Divide</button>
+</body>
+</html>
+
+<script>
+    function add(){
+        var num1 = Number(document.getElementById("fnum").value);
+        var num2 = Number(document.getElementById("snum").value);
+        var ans = (num1+num2);
+        alert(ans);
+    }
+    function sub(){
+        var num1 = Number(document.getElementById("fnum").value);
+        var num2 = Number(document.getElementById("snum").value);
+        var ans = (num1-num2);
+        alert(ans);
+    }
+    function multi(){
+        var num1 = Number(document.getElementById("fnum").value);
+        var num2 = Number(document.getElementById("snum").value);
+        var ans = (num1*num2);
+        alert(ans);
+    }
+    function div(){
+        var num1 = Number(document.getElementById("fnum").value);
+        var num2 = Number(document.getElementById("snum").value);
+        var ans = (num1/num2);
+        alert(ans);
+    }
+</script>
