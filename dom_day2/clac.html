@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h1{
+            color: teal;
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 48px;
+        }
+        #main{
+            margin: auto;
+            height: 430px;
+            border: 1px solid transparent;
+            width: 28%;
+            margin: auto;
+            /* display: flex; */
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+
+        }
+        #res{
+            height: 15%;
+            width: 80%;
+            /* border: 1px solid black; */
+            margin: auto;
+            margin-top: 10%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #nums{
+            height: 50%;
+            /* border: 1px solid black; */
+            margin: auto;
+            width: 80%;
+            margin-top: 5%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,60px);
+            gap: 10px;
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+            /* justify-content: center; */
+             /* align-items: center; */
+        }
+        #nums>div{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            height: 30px;
+            font-size: 20px;
+            padding: 10px 10px;
+            font-weight: bold;
+        }
+        #red{
+            background-color: red;
+            color: white;
+        }
+        #black{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="main">
+        <div id="res"></div>
+        <div id="nums">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div id="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div id="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div id="black">*</div>
+            <div id="red">C</div>
+            <div>0</div>
+            <div id="black">=</div>
+            <div id="black">/</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let keys = document.querySelectorAll("#nums>div");
+    let bag = "";
+    for(let i=0;i<keys.length;i++) {
+        keys[i].addEventListener("click",calc);
+    }
+    function calc(event){
+        let number = event.target.innerText;
+
+        if(number == "C") {
+            bag = "";
+            document.querySelector("#res").innerText = "";
+        }
+        else if(number == "=") {
+            document.querySelector("#res").innerText = eval(bag);
+        }
+        else{
+            bag = bag+number;
+            document.querySelector("#res").innerText = bag;
+        }
+    }
+</script>
