@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="continent">Choose a country:</label>
+<select name="country" id="countrySelect">
+    <option value="">Choose a country</option>
+    <option value="india" id="in">India</option>
+    <option value="usa" id="us">United States of America</option>
+    <option value="china" id="ch">China</option>
+    <option value="nepal" id="ne">Nepal</option>
+    <option value="australia" id="au">Australia</option>
+    <option value="france" id="fr">France</option>
+    <option value="germany" id="ge">Germany</option>
+    <option value="southafrica" id="so">South Africa</option>
+    <option value="nigeria" id="ni">Nigeria</option>
+    <option value="mexico" id="me">Mexico</option>
+    <option value="argentina" id="ar">Argentina</option>
+    <option value="brazil" id="br">Brazil</option>
+    <option value="canada" id="ca">Canada</option>
+    <option value="singapore" id="si">Singapore</option>
+    <option value="sweden" id="sw">Sweden</option>
+</select>
+<button id="btn" onclick="showContinent()">Find Continent</button>
+<p></p>
+</body>
+</html>
+
+<script>
+    function showContinent() {
+       let selectElement = document.querySelector("#countrySelect");
+       let text = selectElement.value;
+       
+       if(text=="india"){
+           document.querySelector("p").innerText="Asia is the continent";
+       }
+       if(text=="nepal"){
+           document.querySelector("p").innerText="Asia is the continent";
+       }
+       if(text=="usa"){
+           document.querySelector("p").innerText="USA is the continent";
+       }
+       if(text=="china"){
+           document.querySelector("p").innerText="Asia is the continent";
+       }
+       if(text=="australia"){
+           document.querySelector("p").innerText="Australia & Oceania is the continent";
+       }
+       if(text=="france"){
+           document.querySelector("p").innerText="Europe is the continent";
+       }
+       if(text=="germany"){
+           document.querySelector("p").innerText="Europe is the continent";
+       }
+       if(text=="southafrica"){
+           document.querySelector("p").innerText="Africa is the continent";
+       }
+       if(text=="nigeria"){
+           document.querySelector("p").innerText="Africa is the continent";
+       }
+       if(text=="brazil"){
+           document.querySelector("p").innerText="South America is the continent";
+       }
+       if(text=="canada"){
+           document.querySelector("p").innerText="North America is the continent";
+       }
+       if(text=="singapore"){
+           document.querySelector("p").innerText="Asia is the continent";
+       }
+       if(text=="sweden"){
+           document.querySelector("p").innerText="Europe is the continent";
+       }
+
+    }
+</script>
