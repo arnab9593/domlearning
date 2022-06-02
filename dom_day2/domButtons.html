@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <style>
+        button{
+            margin-right: 10px;
+            width: 100px;
+            height: 80px; 
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let btnprop = [
+        { name: "Primary", color: "white", bgColor: "blue"},
+        { name: "Secondary", color: "white", bgColor: "grey"},
+        { name: "Danger", color: "white", bgColor: "red"},
+        { name: "Warning", color: "black", bgColor: "yellow"},
+        { name: "Info", color:"black", bgColor: "cyan"},
+        { name: "Light", color:"black", bgColor: "white"},
+        { name: "Success", color:"white", bgColor: "green"},
+        { name: "Dark", color: "white", bgColor: "black"},
+        { name: "Link", color:"blue", bgColor:"white"},
+    ];
+
+    for(let i=0;i<btnprop.length;i++) {
+        let btn = document.createElement("button");
+        btn.innerText = btnprop[i].name;
+        btn.style.color = btnprop[i].color;
+        btn.style.backgroundColor = btnprop[i].bgColor;
+        document.querySelector("body").append(btn);
+    }
+</script>
