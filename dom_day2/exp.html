@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U2C3 Mock</title>
+    <style>
+        #report {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        #card {
+            width: 20%;
+            margin: auto;
+            /* border: 1px solid red; */
+            padding-left: 20px;
+            padding-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <select id="month">
+            <option value="January">JANUARY</option>
+            <option value="February">FEB</option>
+            <option value="MARCH">MARCH</option>
+            <option value="APRIL">APRIL</option>
+            <option value="MAY">MAY</option>
+            <option value="JUNE">JUNE</option>
+            <option value="JULY">JULY</option>
+            <option value="AUGUST">AUGUST</option>
+            <option value="SEPETEMBER">SEPETEMBER</option>
+            <option value="OCTOBER">OCTOBER</option>
+            <option value="NOVEMBER">NOVEMBER</option>
+            <option value="DECEMBER">DECEMBER</option>
+        </select>
+
+        <input id="income" type="number" placeholder="Enter Income" />
+
+        <input id="expense" type="number" placeholder="Enter expense" />
+
+        <input type="submit" />
+    </form>
+
+    <div id="report">
+        <!-- Append your cards here -->
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    document.querySelector("form").addEventListener("submit", myFunction);
+    function myFunction() {
+        event.preventDefault();
+        let cards = document.createElement("div");
+        cards.setAttribute("id", "card");
+
+        let heading = document.createElement("h1");
+        heading.innerText = month.value;
+        let para1 = document.createElement("p");
+        para1.innerText = income.value;
+        let inc = document.querySelector('#income').value
+
+        let para2 = document.createElement("p");
+        para2.innerText = expense.value;
+        let exp = document.querySelector('#expense').value
+
+        inc = (+inc);
+        exp = (+exp);
+
+        let heading3 = document.createElement("h3");
+
+
+        if (inc < exp) {
+            heading3.innerText = 'DEBT';
+            heading3.style.color = 'red';
+        } else if (inc > exp) {
+            heading3.innerText = 'SAVE';
+            heading3.style.color = 'green';
+        } else {
+            heading3.innerText = 'BREAKEVEN';
+            heading3.style.color = 'orange';
+        }
+
+        let del = document.createElement('button');
+        del.innerText = "DELETE"
+
+        del.addEventListener('click', deleteFun);
+        function deleteFun() {
+            event.target.parentNode.remove()
+        }
+
+        cards.append(heading, para1, para2, heading3, del);
+        document.querySelector("#report").append(cards);
+
+    }
+
+
+
+
+</script>
